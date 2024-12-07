@@ -1,11 +1,11 @@
-import UserClass from './components/User'
+import ParentClass from './components/ParentClass'
 
 function App() {
 
   return (
     <>
      <h1>Hello</h1>
-     <UserClass  name={"Akshay Saini"} teacher={"MERN"}  />
+     <ParentClass  name={"Akshay Saini"} teacher={"MERN"}  />
     </>
   )
 }

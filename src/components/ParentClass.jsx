@@ -35,7 +35,7 @@ class ParentClass extends  React.Component{
             <h3>Location : Dehradun</h3>
             <h4>Contact : @akshaymarch7</h4>
             <ChildClass  name={"First"}/>
-            <ChildClass  name={"Second"}/>
+            {/* <ChildClass  name={"Second"}/> */}
         </div>
     }
 }

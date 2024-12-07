@@ -5,21 +5,32 @@ class ChildClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Anonymous",
+      name: "",
+      followers: ""
     };
     console.log(this.props.name + "Child Class constructor");
 }
 
-componentDidMount() {
-    console.log(this.props.name + "ChildClass componentDidMount");
+async componentDidMount() {
+    // console.log(this.props.name + "ChildClass componentDidMount");
+    const response = await fetch('https://api.github.com/users/RaviTesla1');
+    const data = await response.json();
+    console.log(data);
+    this.setState({
+        name: data?.login,
+        followers: data?.followers
+      });
+    
 }
 
 render() {
-      console.log(this.props.name + "Child Class render");
+    //   console.log(this.props.name + "Child Class render");
+    const {name,followers} = this.state
 
     return (
       <div>
-        <h1>{this.props.name}</h1>
+        <h1>{name}</h1>
+        <h1>{followers}</h1>
       </div>
     );
   }
